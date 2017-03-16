@@ -38,19 +38,40 @@ input {
 
 </head>
 <body>
-	<h2 class="center">Validador</h2>	
+	<h2 class="center">Validador</h2>
+	<form:form action="validar" method="Post" modelAttribute="entradaValor">
 		<div class="row">
 			<div class="col-md-3">
-				<c:url value="/validador" var="validador"/>
-				<a href="${validador}" class="btn btn-info">Validar entrada</a>
+				<div class="input-group">
+					<span class="input-group-addon" id="lbEntrada">Entrada:</span> 
+					<input name="texto" type="number" value="${texto }"/>
+				</div>
 			</div>
 		</div>
-	<h2 class="center">Conversor</h2>	
 		<div class="row">
 			<div class="col-md-3">
-				<c:url value="/conversor" var="conversor"/>
-				<a href="${conversor }" class="btn btn-info">Converter Números</a>
+				<div class="input-group">
+					<span class="input-group-addon">
+							<input type="radio" id="cpf" name="tipo" value="CPF" />CPF
+                            <input type="radio" id="cnpj" name="tipo" value="CNPJ" />CNPJ
+                            <input type="radio" id="nit" name="tipo" value="NIT" />NIT
+                            <input type="radio" id="titulo" name="tipo" value="TITULO" />Título Eleitoral
+					</span>
+				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-3 col-md-offset-1">
+				<input type="submit" class="btn btn-info" value="Validar">
+			</div>
+		</div>
+	</form:form>
+	<div class="row">
+		<div class="col-md-6">
+			<h4>
+				<span class="text-${estilo} ">${ resposta}</span>
+			</h4>
+		</div>
+	</div>
 </body>
 </html>
