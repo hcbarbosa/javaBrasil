@@ -38,26 +38,29 @@ input {
 
 </head>
 <body>
-	<h2 class="center">Validador</h2>	
+	<h2 class="center">Converter USD/BRL</h2>
+	<form:form action="converterDinheiro" method="Post" modelAttribute="entradaValor">
 		<div class="row">
 			<div class="col-md-3">
-				<c:url value="/validador" var="validador"/>
-				<a href="${validador}" class="btn btn-info">Validar entrada</a>
+				<div class="input-group">
+					<span class="input-group-addon" id="lbEntrada">USD:</span> 
+					<input name="texto" type="number" step="0.01" value="${texto }"/>
+				</div>
 			</div>
 		</div>
-	<h2 class="center">Conversor</h2>	
+		<br/>
 		<div class="row">
-			<div class="col-md-3">
-				<c:url value="/conversor" var="conversor"/>
-				<a href="${conversor }" class="btn btn-info">Converter Números</a>
+			<div class="col-md-3 col-md-offset-1">
+				<input type="submit" class="btn btn-info" value="Converter">
 			</div>
 		</div>
-	<h2 class="center">Cotação</h2>	
-		<div class="row">
-			<div class="col-md-3">
-				<c:url value="/cotacao" var="cotacao"/>
-				<a href="${cotacao }" class="btn btn-info">Converter USD/BRL</a>
-			</div>
+	</form:form>
+	<div class="row">
+		<div class="col-md-6">
+			<h4>
+				<span class="text-${estilo} ">${ resposta}</span>
+			</h4>
 		</div>
+	</div>
 </body>
 </html>
