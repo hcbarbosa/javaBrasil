@@ -38,28 +38,17 @@ input {
 
 </head>
 <body>
-	<h2 class="center">Validador</h2>
-	<form:form action="validar" method="Post" modelAttribute="entradaValor">
+	<h2 class="center">CEP</h2>
+	<form:form action="consultarCep" method="POST" modelAttribute="entradaValor">
 		<div class="row">
 			<div class="col-md-3">
 				<div class="input-group">
-					<span class="input-group-addon" id="lbEntrada">Entrada:</span> 
-					<input name="texto" type="number" value="${texto }"/>
+					<span class="input-group-addon" id="lbEntrada">CEP:</span> 
+					<input name="texto" maxlength="8" type="text" value="${texto }"  />
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-3">
-				<div class="input-group">
-					<span class="input-group-addon">
-							<input type="radio" id="cpf" name="tipo" value="CPF" />CPF
-                            <input type="radio" id="cnpj" name="tipo" value="CNPJ" />CNPJ
-                            <input type="radio" id="nit" name="tipo" value="NIT" />NIT
-                            <input type="radio" id="titulo" name="tipo" value="TITULO" />Título Eleitoral
-					</span>
-				</div>
-			</div>
-		</div>
+		<br>
 		<div class="row">
 			<div class="col-md-3 col-md-offset-1">
 				<input type="submit" class="btn btn-info" value="Validar">

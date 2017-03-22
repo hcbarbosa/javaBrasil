@@ -1,8 +1,6 @@
 package br.com.hcb.javaBrasil.controllers;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
 
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
@@ -48,12 +46,11 @@ public class CotacaoController {
 				CurrencyConversion conversaoAtual = provider.getCurrencyConversion(real);
 				ExchangeRate cotacao = conversaoAtual.getExchangeRate(valorEmDolar);
 				
-				BigDecimal valorUmDolar = new BigDecimal(cotacao.getFactor().toString());
-				valorUmDolar.round(new MathContext(4, RoundingMode.HALF_UP));
-				String valorFinal = ""+(valorUmDolar.doubleValue() * valor.doubleValue());
+				String valorFinal = ""+(cotacao.getFactor().doubleValue() * valor.doubleValue());
 				
 				estilo = "success";
-				resposta = valorFinal;
+				resposta = "Valor em reais: ";
+				resposta += valorFinal;
 			}catch (Exception e) {
 				estilo = "danger";
 				resposta = e.getMessage();

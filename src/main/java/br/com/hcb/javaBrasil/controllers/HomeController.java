@@ -25,4 +25,9 @@ public class HomeController {
 	public String cotacao() {
 		return "cotacao";
 	}
+	
+	@RequestMapping("/cep")
+	public String cep() {
+		return "cep";
+	}
 }

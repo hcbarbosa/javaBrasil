@@ -59,5 +59,12 @@ input {
 				<a href="${cotacao }" class="btn btn-info">Converter USD/BRL</a>
 			</div>
 		</div>
+	<h2 class="center">CEP</h2>	
+		<div class="row">
+			<div class="col-md-3">
+				<c:url value="/cep" var="cep"/>
+				<a href="${cep }" class="btn btn-info">Consultar CEP</a>
+			</div>
+		</div>
 </body>
 </html>
